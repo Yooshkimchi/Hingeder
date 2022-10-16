@@ -1,3 +1,11 @@
 div.header {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        position:fixed;
+        left:0%;
+        top:0%;
+}
+ 
+h1.logo {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align:center;
 }
