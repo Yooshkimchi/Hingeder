@@ -1,11 +1,38 @@
 div.header {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         position:fixed;
-        left:0%;
-        top:0%;
+        text-align: center;
+        width:100%;
+        margin-bottom: 200px;
+        color:#fff;
 }
- 
+
 h1.logo {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        text-align:center;
+        text-align: center;
+        font-weight: 400;
+        color: #fff;
+}
+body {
+        background-color: rgb(220, 155, 155);
+        position: fixed;
+        color: rgb(82, 77, 77);
+}
+.header li{
+        float: left;
+        margin-left: 20px;
+        list-style: none;
+}
+.header a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px;
+}
+.header a:hover {
+    background-color: #fff;
+    color: rgb(220, 155, 155);
+    border-radius: 2px;;
+}
+h2 {
+        margin-top:150px;
 }
