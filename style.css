@@ -1,9 +1,8 @@
 div.header {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        position:fixed;
         text-align: center;
         width:100%;
-        margin-bottom: 200px;
+        margin-bottom: 75px;
         color:#fff;
 }
 
@@ -15,7 +14,6 @@ h1.logo {
 }
 body {
         background-color: rgb(220, 155, 155);
-        position: fixed;
         color: rgb(82, 77, 77);
 }
 .header li{
@@ -32,7 +30,4 @@ body {
     background-color: #fff;
     color: rgb(220, 155, 155);
     border-radius: 2px;;
-}
-h2 {
-        margin-top:150px;
 }
