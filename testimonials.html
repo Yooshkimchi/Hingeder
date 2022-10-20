@@ -10,7 +10,16 @@
             td:first-child {
                 text-align: center;
             }
+            #wrapper {
+                display: none;
+             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+	        $(document).ready(function(){
+                $("#wrapper").fadeIn(1000);
+            });
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
@@ -26,12 +35,13 @@
               <li><a href="testimonials.html">TESTIMONIALS</a></li>
             </ul>
         </div>
+        <div id="wrapper">
         <h2>Testimonials</h2>
         <table>
             <tr>
                 <td>
                     <img src="testimonial1.png" alt="image" width="200" height="200">
-                    <p>Alyssa Brown, age 22</p>
+                    <p>Alyssa Brown <br /> Age 22</p>
                 </td>
                 <td>
                     <p>
@@ -45,7 +55,7 @@
             <tr>
                 <td>
                     <img src="testimonial2.png" alt="image" width="200" height="200">
-                    <p>Braxton Jones, age 25</p>
+                    <p>Braxton Jones <br /> Age 25</p>
                 </td>
                 <td>
                     <p>
@@ -61,7 +71,7 @@
             <tr>
                 <td>
                     <img src="testimonial3.png" alt="image" width="200" height="200">
-                    <p>Jannet Olson, age 32</p>
+                    <p>Jannet Olson <br /> Age 32</p>
                 </td>
                 <td>
                     <p>
@@ -77,7 +87,7 @@
             <tr>
                 <td>
                     <img src="testimonial4.png" alt="image" width="200" height="200">
-                    <p>Pascal Moser, age 30</p>
+                    <p>Pascal Moser <br /> Age 30</p>
                 </td>
                 <td>
                     <p>
@@ -87,6 +97,6 @@
                 </td>
             </tr>
         </table>
-        
+        </div>
     </body>
 </html>

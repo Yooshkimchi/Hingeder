@@ -3,7 +3,7 @@
         <title>Hingeder 2.0</title>
         <link rel="stylesheet" href="style.css">
         <style type="text/css">
-            #bios {
+            /* #bios {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -12,20 +12,42 @@
                 align-content: center;
                 margin-top: 10px;
                 margin-bottom: 10px; 
-             }
-             .bio {
+            }
+            .bio {
                 width: 250px;
                 height: 300px;
                 margin: 30px;
                 margin-bottom: 105px;
                 padding: 10px;
-             }
-             .bio img {
+            }
+            .bio img {
                 display: block;
                 margin: auto;
-             }
+            } */
+            td {
+                padding: 10px;
+                padding-bottom: 30px;
+            }
+            td:first-child {
+                text-align: center;
+            }
+            #wrapper {
+                display: none;
+            }
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+	        $(document).ready(function(){
+	            // $("h2").hide();
+                // $("h3").hide();
+                // $("p").hide();
+                // $("h2").fadeIn(2000);
+                //$("#wrapper").css("display", "none");
+                // $("#wrapper").hide();
+                $("#wrapper").fadeIn(1000);
+            });
+        </script>
     </head>
     <body>
         <div class="header">
@@ -40,6 +62,7 @@
               <li><a href="testimonials.html">TESTIMONIALS</a></li>
             </ul>
         </div>
+        <div id="wrapper">
         <h2>About Us</h2>
         <p> Here at Hingeder, we pride ourselves on being a business
             founded by a few friends who just wanted to make it easier for everyone to meet new people. 
@@ -50,7 +73,9 @@
             of people find their soulmates.
         </p>
 
-        <h3>What sets us apart?</h3>
+        <br />
+
+        <h2>What sets us apart?</h2>
             <p>   
             Our state of the art matching algorithm is guaranteed to help you find someone that
             you will love. We have a team of experts that are constantly working to improve our
@@ -70,7 +95,7 @@
 
         <br />
 
-        <h3>Our Mission</h3>
+        <h2>Our Mission</h2>
         <p>When we first came up with the idea of creating a dating consultant business, we thought 
             what will distinguish our business from the others? We decided that the best way for us 
             to stand out was to create a matching service that felt genuine and authentic. 
@@ -80,10 +105,13 @@
             our friends about dating and put them into our matching algorithm. We hope that you will feel a sense 
             of comfort and trust when you use our service like you do with a close friend.
         </p>
-        <h3>Meet the Team!</h3>
-        <div id="bios">
+
+        <br />
+
+        <h2>Meet the Team!</h2>
+        <!-- <div id="bios">
             <div class="bio">
-                <img src="Nishika.png" height="200px" alt="Alex" />
+                <img src="Nishika.png" height="200px" alt="Nishika Pabba" />
                 <h4>Nishika Pabba</h4>
                 <p>
                     Nishika Pabba is the CEO and a co-founder of Hingeder. She wanted to help people find 
@@ -92,7 +120,7 @@
                 </p>
             </div>
             <div class="bio">
-                <img src="Josh.png" height="200px" alt="Andrew" />
+                <img src="Josh.png" height="200px" alt="Joshua Kim" />
                 <h4>Joshua Kim</h4>
                 <p>
                     Joshua “jkimchi” Kim is the CFO and one of the co-founders of Hingeder. As a college 
@@ -102,7 +130,7 @@
                 </p>
             </div>
             <div class="bio">
-                <img src="Meghan.png" height="200px" alt="Andrew" />
+                <img src="Meghan.png" height="200px" alt="Meghan Kloud" />
                 <h4>Meghan Kloud</h4>
                 <p>
                     Meghan Kloud is the CTO and one of the co-founders of Hingeder. She has been working on 
@@ -112,17 +140,75 @@
                 </p>
             </div>
             <div class="bio">
-                <img src="Esther.png" height="200px" alt="Andrew" />
+                <img src="Esther.png" height="200px" alt="Sirhyun Kim" />
                 <h4>Sirhyun Kim</h4>
                 <p>
                     Sirhyun Kim is a Director of Product and one of the co-founders of Hingeder. As an art 
                     major student, she developed her artistic visions and design skills at college and she 
                     is responsible for all stages: inception, design, development, testing, and deployment. 
                     With other co-founders, she builds a compelling product that helps users find true love 
-                    and meaningful connections. 
-                    
+                    and meaningful connections.
                 </p>
-            </div>
+            </div> -->
+            <table>
+                <tr>
+                    <td>
+                        <img src="Nishika.png" height="200px" alt="Nishika Pabba" />
+                    </td>
+                    <td>
+                        <h2>Nishika Pabba, CEO</h2>
+                        <p>
+                            Nishika Pabba is the CEO and a co-founder of Hingeder. She wanted to help people find 
+                            true love by creating this platform. This product has been successful in helping users 
+                            create lasting relationships since day one.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Josh.png" height="200px" alt="Joshua Kim" />
+                    </td>
+                    <td>
+                        <h2>Joshua Kim, CFO</h2>
+                        <p>
+                            Joshua “jkimchi” Kim is the CFO and one of the co-founders of Hingeder. As a college 
+                            student, he got absolutely 0 play, so he and co-founders created a website to make it
+                            easier for him to find love. While this was ultimately unsuccessful for him, his efforts 
+                            have made it possible for Hingeder to be the successful dating platform it is today. 
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Meghan.png" height="200px" alt="Meghan Kloud" />
+                    </td>
+                    <td>
+                        <h2>Meghan Kloud, CTO</h2>
+                        <p>
+                            Meghan Kloud is the CTO and one of the co-founders of Hingeder. She has been working on 
+                            the Hingeder website since its inception and helped to build its effective matching algorithm. 
+                            She is passionate about helping people find love and is excited to see where Hingeder 
+                            goes in the future.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Esther.png" height="200px" alt="Andrew" />
+                    </td>
+                    <td>
+                        <h2>Sirhyun Kim, Director of Product</h2>
+                        <p>
+                            Sirhyun Kim is a Director of Product and one of the co-founders of Hingeder. As an art 
+                            major student, she developed her artistic visions and design skills at college and she 
+                            is responsible for all stages: inception, design, development, testing, and deployment. 
+                            With other co-founders, she builds a compelling product that helps users find true love 
+                            and meaningful connections.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
         </div>
     </body>
 </html>
