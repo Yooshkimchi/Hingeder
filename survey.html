@@ -37,10 +37,14 @@
                 border-color: #fff;
                 transform: translateY(-0.075em);
 
-                display: grid;
+                display:inline-grid;
                 place-content: center;
+                accent-color: rgb(196, 20, 20);
         }
 
+        input[type="radio"]:hover {
+                border-color: rgb(196, 20, 20);
+        }
         input[type="radio"]::before {
                 content: "";
                 width: 0.65em;
@@ -50,7 +54,7 @@
                 transition: 120ms transform ease-in-out;
                 box-shadow: inset 1em 1em var(--form-control-color);
                 /* Windows High Contrast Mode */
-                background-color: CanvasText;
+                background-color: rgb(196, 20, 20);;
         }
 
         input[type="radio"]:checked::before {
@@ -125,7 +129,7 @@
                                 if (name == "") {
                                         return false;
                                 }
-                                return /^[A-Za-z]*$/.test(name);
+                                return /^[A-Za-z]*\s[A-Za-z]*$/.test(name);
                         }
                         function validateAge() {
                                 let age = document.getElementsByName("age").value;
@@ -135,8 +139,8 @@
                                 return true;
                         }
                         function validateAnimal() {
-                                let age = document.getElementsByName("animal").value;
-                                if (age == "") {
+                                let animal = document.getElementsByName("animal").value;
+                                if (animal == "") {
                                         return false;
                                 }
                                 return true;
@@ -157,6 +161,7 @@
                                 valid &= validateAge();
                                 valid &= validateAnimal();
                                 valid &= validateCeleb();
+                                // match with one of us given certain answers
                                 if (valid) {
                                         alert("YAY!");
                                 } else {
