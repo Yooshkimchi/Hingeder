@@ -2,7 +2,7 @@
 <head>
 <title>Hingeder 2.0</title>
         <link rel="stylesheet" href="style.css">
-        <!-- <meta name='viewport' content="width=device-width, initial scale=1"> -->
+        <meta name='viewport' content="width=device-width, initial scale=1">
         <style>
 
         form {
@@ -112,28 +112,56 @@
                 <input type="submit" value="Submit" onClick="getVals(this.form)">
 
                 <script>
+                        // Array to hold celebs
                         celebs = new Array(
-                                "Obama",
-                                "Jeff",
-                                "Taylor"
+                                "celeb1",
+                                "celeb2",
+                                "celeb3"
                         );
+                        // functions to validate answers
                         function validateName() {
                                 let validNamePhone = true;
                                 let name = document.getElementsByName('name')[0].value;
                                 if (name == "") {
                                         return false;
                                 }
-                                return true;
+                                return /^[A-Za-z]*$/.test(name);
                         }
                         function validateAge() {
-                                let age = document.getElementsByName("name").value;
-
-                                return age;
+                                let age = document.getElementsByName("age").value;
+                                if (age == "") {
+                                        return false;
+                                }
+                                return true;
+                        }
+                        function validateAnimal() {
+                                let age = document.getElementsByName("animal").value;
+                                if (age == "") {
+                                        return false;
+                                }
+                                return true;
+                        }
+                        function validateCeleb() {
+                                let valid = false;
+                                for (let i = 0; i < celebs.length; i++) {
+                                        let celeb = document.getElementsByName(celebs[i])[0];
+                                        if (celeb.checked) {
+                                                valid = true;
+                                        }
+                                }
+                                return valid;
                         }
                         function getVals() {
                                 let valid = true;
                                 valid &= validateName();
                                 valid &= validateAge();
+                                valid &= validateAnimal();
+                                valid &= validateCeleb();
+                                if (valid) {
+                                        alert("YAY!");
+                                } else {
+                                        alert(">:(");
+                                }
 
                         }
                 </script>
