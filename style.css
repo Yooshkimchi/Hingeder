@@ -1,3 +1,11 @@
+@media(min-width: 930px){
+        .header li{
+                float: left;
+                margin-left: 20px;
+                list-style: none;
+        }
+}
+
 div.header {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: center;
