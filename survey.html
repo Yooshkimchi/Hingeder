@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<html>
 <head>
 <title>Hingeder 2.0</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="business.css">
-        <link rel="stylesheet" href="media.css">
-        <meta name='viewport' content="width=device-width, initial scale=1">
+        <!-- <meta name='viewport' content="width=device-width, initial scale=1"> -->
         <style>
 
         form {
                 color:rgb(98, 76, 76);
                 background-color: rgb(235, 176, 176);
+                margin-top: 0;
                 margin-left: 25%;
                 margin-right: 25%;
                 padding: 2%;
@@ -113,10 +112,29 @@
                 <input type="submit" value="Submit" onClick="getVals(this.form)">
 
                 <script>
+                        celebs = new Array(
+                                "Obama",
+                                "Jeff",
+                                "Taylor"
+                        );
+                        function validateName() {
+                                let validNamePhone = true;
+                                let name = document.getElementsByName('name')[0].value;
+                                if (name == "") {
+                                        return false;
+                                }
+                                return true;
+                        }
+                        function validateAge() {
+                                let age = document.getElementsByName("name").value;
+
+                                return age;
+                        }
                         function getVals() {
-                                let firstNum = form.num1.value;
-                                let secondNum = form.num2.value;
-                                alert("")
+                                let valid = true;
+                                valid &= validateName();
+                                valid &= validateAge();
+
                         }
                 </script>
         </form>
