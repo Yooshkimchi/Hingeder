@@ -4,6 +4,12 @@
         <link rel="stylesheet" href="style.css">
         <meta name='viewport' content="width=device-width, initial scale=1.0">
         <meta name="keywords" content="love, match, hinge, tinder, bumble, dating"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+	        $(document).ready(function(){
+                $("#wrapper").fadeIn(500);
+            });
+        </script>
     </head>
     <style>
         section{
@@ -11,6 +17,9 @@
         } 
         p{
         font-size: 18px;
+        }
+        #wrapper {
+            display: none;
         }
       </style>
     <body>
@@ -26,6 +35,7 @@
               <li><a href="testimonials.html">TESTIMONIALS</a></li>
             </ul>
         </div>
+        <div id="wrapper">
         <article>
             <section>
                 <h2>Contact Us</h2>
@@ -50,5 +60,6 @@
                 </div>
             </section>
         </article>
+        </div>
     </body>
 </html>

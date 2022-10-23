@@ -2,6 +2,13 @@
 <title>Hingeder 2.0</title>
   <link rel="stylesheet" href="style.css">
   <meta name='viewport' content="width=device-width, initial scale=1">
+  <meta name="keywords" content="love, match, hinge, tinder, bumble, dating"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+	    $(document).ready(function(){
+          $("#wrapper").fadeIn(500);
+      });
+  </script>
 </head>
 <style>
   img{
@@ -26,6 +33,9 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
 }
+#wrapper {
+  display: none;
+}
 </style>
 <body>
     <div class="header">
@@ -40,8 +50,10 @@
           <li><a href="testimonials.html">TESTIMONIALS</a></li>
         </ul>
     </div>
+    <div id="wrapper">
 
     <div id="overlay">
       <h2>Find your true love!</h2>
     </div>
+  </div>
 </body>
