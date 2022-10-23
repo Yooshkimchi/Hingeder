@@ -17,9 +17,6 @@
                 align-items: center;
                 width:50%;
         }
-        input[type=text]:focus {
-        border: 2px solid #a0bcf0;
-        }
         h2 {
                 text-align: center;
                 align-items: center;
@@ -98,7 +95,7 @@
                 <p>If you were an animal what would you be?</p>
                 <input type="radio" id="dog" name="animal" value="dog">
                 <label for="dog">Dog</label></br>
-                <input type="radio" id="cat" name="animal" value="car">
+                <input type="radio" id="cat" name="animal" value="cat">
                 <label for="cat">Cat</label></br>
                 <input type="radio" id="sloth" name="animal" value="sloth">
                 <label for="sloth">Sloth</label></br>
@@ -134,35 +131,58 @@
                                 "celeb4",
                                 "celeb5"
                         );
+                        animals = new Array(
+                                "dog",
+                                "cat",
+                                "sloth",
+                                "penguin",
+                                "panda"
+                        );
+                        ages = new Array(
+                                "young",
+                                "ya",
+                                "older",
+                                "old",
+                        );
                         // functions to validate answers
                         function validateName() {
                                 let validNamePhone = true;
                                 let name = document.getElementsByName('name')[0].value;
                                 if (name == "") {
-                                        errorMessage += "Please enter your name</br>";
+                                        errorMessage += "Please enter your name\n";
                                         return false;
                                 }
                                 let valid =  /^[A-Za-z]*\s[A-Za-z]*$/.test(name);
                                 if (!valid) {
-                                        errorMessage += "Please enter your first and last name</br>";
+                                        errorMessage += "Please enter your first and last name\n";
                                 }
                                 return valid;
                         }
                         function validateAge() {
                                 let age = document.getElementsByName("age").value;
-                                if (age == "") {
-                                        errorMessage += "Please choose an age</br>";
-                                        return false;
+                                let valid = false;
+                                for (let i = 0; i < ages.length; i++) {
+                                        if (age == ages[i]) {
+                                                valid = true;
+                                        }
                                 }
-                                return true;
+                                if (!valid) {
+                                        errorMessage += "Please choose an age\n";
+                                }
+                                return valid;
                         }
                         function validateAnimal() {
                                 let animal = document.getElementsByName("animal").value;
-                                if (animal == "") {
-                                        errorMessage += "Please choose an animal</br>";
-                                        return false;
+                                let valid = false;
+                                for (let i = 0; i < ages.length; i++) {
+                                        if (animal == animals[i]) {
+                                                valid = true;
+                                        }
                                 }
-                                return true;
+                                if (!valid) {
+                                        errorMessage += "Please choose an animal\n";
+                                }
+                                return valid;
                         }
                         function validateCeleb() {
                                 let valid = false;
@@ -173,7 +193,7 @@
                                         }
                                 }
                                 if (!valid) {
-                                        errorMessage += "Please select at least one singer</br>";
+                                        errorMessage += "Please select at least one singer\n";
                                 }
                                 return valid;
                         }
