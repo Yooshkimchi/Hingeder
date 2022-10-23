@@ -48,7 +48,9 @@
                 place-content: center;
                 accent-color: rgb(152, 49, 141);
         }
-
+        label {
+                font-size: 20px
+        }
         input[type="radio"]:hover {
                 border-color: rgb(152, 49, 141);
         }
@@ -201,7 +203,7 @@
                         function validateCeleb() {
                                 let valid = false;
                                 for (let i = 0; i < celebs.length; i++) {
-                                        let celeb = document.getElementsByName(celebs[i]);
+                                        let celeb = document.getElementsByName(celebs[i])[0];
                                         if (celeb.checked) {
                                                 valid = true;
                                         }
