@@ -17,6 +17,9 @@
                 align-items: center;
                 width:50%;
         }
+        input[type=text]:focus {
+        border: 2px solid #a0bcf0;
+        }
         h2 {
                 text-align: center;
                 align-items: center;
@@ -159,10 +162,10 @@
                                 return valid;
                         }
                         function validateAge() {
-                                let age = document.getElementsByName("age").value;
                                 let valid = false;
                                 for (let i = 0; i < ages.length; i++) {
-                                        if (age == ages[i]) {
+                                        let age = document.getElementsByName("age");
+                                        if (age[i].checked == true) {
                                                 valid = true;
                                         }
                                 }
@@ -172,10 +175,10 @@
                                 return valid;
                         }
                         function validateAnimal() {
-                                let animal = document.getElementsByName("animal").value;
                                 let valid = false;
-                                for (let i = 0; i < ages.length; i++) {
-                                        if (animal == animals[i]) {
+                                for (let i = 0; i < animals.length; i++) {
+                                        let animal = document.getElementsByName("animal");
+                                        if (animal[i].checked == true) {
                                                 valid = true;
                                         }
                                 }
@@ -187,7 +190,7 @@
                         function validateCeleb() {
                                 let valid = false;
                                 for (let i = 0; i < celebs.length; i++) {
-                                        let celeb = document.getElementsByName(celebs[i])[0];
+                                        let celeb = document.getElementsByName(celebs[i]);
                                         if (celeb.checked) {
                                                 valid = true;
                                         }
@@ -198,6 +201,7 @@
                                 return valid;
                         }
                         function getVals() {
+                                errorMessage = "";
                                 let valid = true;
                                 valid &= validateName();
                                 valid &= validateAge();
