@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<html>
 <head>
 <title>Hingeder 2.0</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="business.css">
-        <link rel="stylesheet" href="media.css">
         <meta name='viewport' content="width=device-width, initial scale=1">
         <style>
 
         form {
                 color:rgb(98, 76, 76);
                 background-color: rgb(235, 176, 176);
+                margin-top: 0;
                 margin-left: 25%;
                 margin-right: 25%;
                 padding: 2%;
@@ -18,10 +17,17 @@
                 align-items: center;
                 width:50%;
         }
+        input[type=text]:focus {
+        border: 2px solid #a0bcf0;
+        }
         h2 {
                 text-align: center;
                 align-items: center;
                 position:relative;
+        }
+        input[type="text"] {
+                background-color: rgb(235, 205, 205);
+                border-color:rgb(235, 176, 176);
         }
         input[type="radio"] {
                 /* Remove most all native input styles */
@@ -30,7 +36,6 @@
                 margin: 0;
 
                 font: inherit;
-                color: currentColor;
                 width: 1.15em;
                 height: 1.15em;
                 border: 0.15em solid currentColor;
@@ -38,10 +43,14 @@
                 border-color: #fff;
                 transform: translateY(-0.075em);
 
-                display: grid;
+                display:inline-grid;
                 place-content: center;
+                accent-color: rgb(152, 49, 141);
         }
 
+        input[type="radio"]:hover {
+                border-color: rgb(152, 49, 141);
+        }
         input[type="radio"]::before {
                 content: "";
                 width: 0.65em;
@@ -50,8 +59,7 @@
                 transform: scale(0);
                 transition: 120ms transform ease-in-out;
                 box-shadow: inset 1em 1em var(--form-control-color);
-                /* Windows High Contrast Mode */
-                background-color: CanvasText;
+                background-color: rgb(152, 49, 141);
         }
 
         input[type="radio"]:checked::before {
@@ -72,7 +80,7 @@
                         <li><a href="testimonials.html">TESTIMONIALS</a></li>
                 </ul>
         </div>
-        <h2>Survey!</h2>
+        <h2>Take Our Survey!</h2>
         <form>
                 <label for="name">Name:</label></br>
                 <input type="text" id="name" name="name" value=""></br>
@@ -102,21 +110,88 @@
                 <label for="favcolor">What's your favorite color?</label>
                 <input type="color" id="favcolor" name="favcolor" value="#000000"></br>
 
-                <p>Who would you have dinner with?</p>
-                <input type="checkbox" id="celeb1" name="celeb1" value="Barack Obama">
-                <label for="celeb1">Barack Obama</label></br>
-                <input type="checkbox" id="celeb2" name="celeb2" value="Jeff Bezos">
-                <label for="celeb2">Jeff Bezos</label></br>
+                <p>Who do you listen to?</p>
+                <input type="checkbox" id="celeb1" name="celeb1" value="Khalid">
+                <label for="celeb1">Khalid</label></br>
+                <input type="checkbox" id="celeb2" name="celeb2" value="Olivia Rodrigo">
+                <label for="celeb2">Olivia Rodrigo</label></br>
                 <input type="checkbox" id="celeb3" name="celeb3" value="Taylor Swift">
                 <label for="celeb3">Taylor Swift</label></br>
+                <input type="checkbox" id="celeb4" name="celeb4" value="IU">
+                <label for="celeb4">IU</label></br>
+                <input type="checkbox" id="celeb5" name="celeb5" value="None">
+                <label for="celeb5">None</label></br>
                 </br>
                 <input type="submit" value="Submit" onClick="getVals(this.form)">
 
                 <script>
+                        let errorMessage = "";
+                        // Array to hold celebs
+                        celebs = new Array(
+                                "celeb1",
+                                "celeb2",
+                                "celeb3",
+                                "celeb4",
+                                "celeb5"
+                        );
+                        // functions to validate answers
+                        function validateName() {
+                                let validNamePhone = true;
+                                let name = document.getElementsByName('name')[0].value;
+                                if (name == "") {
+                                        errorMessage += "Please enter your name</br>";
+                                        return false;
+                                }
+                                let valid =  /^[A-Za-z]*\s[A-Za-z]*$/.test(name);
+                                if (!valid) {
+                                        errorMessage += "Please enter your first and last name</br>";
+                                }
+                                return valid;
+                        }
+                        function validateAge() {
+                                let age = document.getElementsByName("age").value;
+                                if (age == "") {
+                                        errorMessage += "Please choose an age</br>";
+                                        return false;
+                                }
+                                return true;
+                        }
+                        function validateAnimal() {
+                                let animal = document.getElementsByName("animal").value;
+                                if (animal == "") {
+                                        errorMessage += "Please choose an animal</br>";
+                                        return false;
+                                }
+                                return true;
+                        }
+                        function validateCeleb() {
+                                let valid = false;
+                                for (let i = 0; i < celebs.length; i++) {
+                                        let celeb = document.getElementsByName(celebs[i])[0];
+                                        if (celeb.checked) {
+                                                valid = true;
+                                        }
+                                }
+                                if (!valid) {
+                                        errorMessage += "Please select at least one singer</br>";
+                                }
+                                return valid;
+                        }
                         function getVals() {
-                                let firstNum = form.num1.value;
-                                let secondNum = form.num2.value;
-                                alert("")
+                                let valid = true;
+                                valid &= validateName();
+                                valid &= validateAge();
+                                valid &= validateAnimal();
+                                valid &= validateCeleb();
+                                // match with one of us given certain answers
+                                if (valid) {
+                                        alert("Thank you for your response! We'll" +
+                                        " reach out with more details when we" + 
+                                        " find a good match!");
+                                } else {
+                                        alert(errorMessage);
+                                }
+
                         }
                 </script>
         </form>
