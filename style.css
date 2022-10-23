@@ -39,6 +39,35 @@ body {
     color: rgb(220, 155, 155);
     border-radius: 2px;;
 }
+
 p {
         font-size: 20px
+}
+p a {
+        outline: none;
+        text-decoration: none;
+        padding: 2px 1px 0;
+}
+
+p a:link {
+        color: #b04d70;
+}
+
+p a:visited {
+        color: #b04d70;
+}
+
+p a:focus {
+        border-bottom: 1px solid;
+        background: #feb0aa;
+}
+
+p a:hover {
+        border-bottom: 1px solid;
+        background: #feb0aa;
+}
+
+p a:active {
+        background: #da5986;
+        color: #e09eb5;
 }
